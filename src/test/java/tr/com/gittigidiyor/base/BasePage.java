@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class BasePage
 {
     public WebDriver driver;
-    WebDriverWait wait;
+    public WebDriverWait wait;
     JavascriptExecutor javascriptExecutor;
     protected final static Logger logger = Logger.getLogger(String.valueOf(BasePage.class));
 

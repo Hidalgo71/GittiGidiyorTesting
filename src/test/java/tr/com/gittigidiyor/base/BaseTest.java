@@ -34,7 +34,7 @@ public class BaseTest
     @After
     public void tearDown()
     {
-        driver.close();                                             //Close Tab
-        driver.quit();                                              //Close Chrome
+        //driver.close();                                             //Close Tab
+        //driver.quit();                                              //Close Chrome
     }
 }
