@@ -25,6 +25,8 @@ public class BaseTest
         chromeOptions.addArguments("'--dns-prefetch-disable'");                 //resolve domain names before resources get requested
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--ignore-certificate-errors");
+        //chromeOptions.addArguments("profile.default_content_setting_values.cookies", 1);
+        //chromeOptions.addArguments("profile.cookie_controls_mode", (String) 1);
         chromeOptions.setAcceptInsecureCerts(true);
 
 

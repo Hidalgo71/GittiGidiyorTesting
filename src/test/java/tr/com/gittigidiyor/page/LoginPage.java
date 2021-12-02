@@ -22,9 +22,15 @@ public class LoginPage extends BasePage
         Thread.sleep(1000);
         //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.fui1s9-0.sc-6h1fgd-0.bYFmcS")));
         WebElement cursorMove = driver.findElement(By.cssSelector("a.qjixn8-0.sc-1bydi5r-0.lghPw"));
-
         //div[@class='gekhq4-6 hnYHyk']
         actions.moveToElement(driver.findElement(By.cssSelector("a.qjixn8-0.sc-1bydi5r-0.lghPw"))).click().build().perform();
         //qjixn8-0 sc-1bydi5r-0 lghPw
+    }
+
+    public void login()
+    {
+        driver.findElement(By.xpath("//input[@id='L-UserNameField']")).sendKeys("mytesting871@gmail.com");
+        driver.findElement(By.xpath("//input[@id='L-PasswordField']")).sendKeys("my.test871");
+        driver.findElement(By.xpath("//input[@id='gg-login-enter']")).click();
     }
 }
