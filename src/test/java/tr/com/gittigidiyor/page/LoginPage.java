@@ -15,13 +15,16 @@ public class LoginPage extends BasePage
         super(driver);
     }
 
-    public void openLoginPage()
+    public void openLoginPage() throws InterruptedException
     {
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(By.xpath("//div[@class='gekhq4-6 hnYHyk']"))).build().perform();
-        WebElement cursorMove = driver.findElement(By.xpath("//div[@class='gekhq4-6 hnYHyk']"));
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='sc-12t95ss-3 fDarBX']//a[@type='button']")));
-        actions.moveToElement(driver.findElement(By.cssSelector(".qjixn8-0.sc-1bydi5r-0.lghPw"))).click().build().perform();
+        actions.moveToElement(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/header[1]/div[3]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]"))).build().perform();
+        Thread.sleep(1000);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.fui1s9-0.sc-6h1fgd-0.bYFmcS")));
+        WebElement cursorMove = driver.findElement(By.cssSelector("a.qjixn8-0.sc-1bydi5r-0.lghPw"));
+
+        //div[@class='gekhq4-6 hnYHyk']
+        actions.moveToElement(driver.findElement(By.cssSelector("a.qjixn8-0.sc-1bydi5r-0.lghPw"))).click().build().perform();
         //qjixn8-0 sc-1bydi5r-0 lghPw
     }
 }

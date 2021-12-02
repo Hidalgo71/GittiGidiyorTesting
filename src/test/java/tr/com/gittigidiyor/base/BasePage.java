@@ -4,17 +4,20 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.logging.Logger;
 
 public class BasePage
 {
-    public WebDriver driver;
-    public WebDriverWait wait;
-    JavascriptExecutor javascriptExecutor;
+    public static WebDriver driver;
+    public static WebDriverWait wait;
+    public static JavascriptExecutor js ;
     protected final static Logger logger = Logger.getLogger(String.valueOf(BasePage.class));
 
     public BasePage(WebDriver driver)
     {
-        this.driver = driver;
+        BasePage.driver = driver;
+        js = (JavascriptExecutor) driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 }
