@@ -1,9 +1,14 @@
 package tr.com.gittigidiyor.test;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import tr.com.gittigidiyor.base.BaseTest;
 import tr.com.gittigidiyor.page.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CoreTest extends BaseTest
 {
 
@@ -16,6 +21,7 @@ public class CoreTest extends BaseTest
     LogoutPage logoutPage;
 
     @Test
+    @Order(1)
     public void loginMethod() throws InterruptedException
     {
         loginPage = new LoginPage(driver);
@@ -24,6 +30,7 @@ public class CoreTest extends BaseTest
     }
 
    @Test
+   @Order(2)
    public void searchScrollMethod()
    {
        searchScroll = new SearchScrollPage(driver);
@@ -31,6 +38,7 @@ public class CoreTest extends BaseTest
    }
 
     @Test
+    @Order(3)
     public void addRandomMethod()
     {
         addRandom = new RandomAddPage(driver);
@@ -38,6 +46,7 @@ public class CoreTest extends BaseTest
     }
 
     @Test
+    @Order(4)
     public void bagSearchMethod() throws InterruptedException
     {
         bagSearchAdd = new BagSearchAddPage(driver);
@@ -46,6 +55,7 @@ public class CoreTest extends BaseTest
     }
 
    @Test
+   @Order(5)
     public void cartPageMethod() throws InterruptedException
    {
         cartPage = new CartPage(driver);
@@ -53,6 +63,7 @@ public class CoreTest extends BaseTest
     }
 
     @Test
+    @Order(6)
     public void paymentAddressMethod()
     {
         paymentPage.addressErrors();
@@ -60,6 +71,7 @@ public class CoreTest extends BaseTest
         paymentPage.addFav();
     }
     @Test
+    @Order(7)
     public void logoutMethode()
     {
         logoutPage.newTab();

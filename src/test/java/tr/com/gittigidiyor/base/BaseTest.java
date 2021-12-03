@@ -1,12 +1,17 @@
 package tr.com.gittigidiyor.base;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BaseTest
 {
     public static WebDriver driver;
@@ -14,7 +19,7 @@ public class BaseTest
     //public static JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
-    @BeforeClass
+    @BeforeAll
     public static void setup()
     {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -32,9 +37,11 @@ public class BaseTest
 
         driver = new ChromeDriver(chromeOptions);
         driver.get("https://www.gittigidiyor.com/");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDown()
     {
         //driver.close();                                             //Close Tab
